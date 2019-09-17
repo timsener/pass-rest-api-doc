@@ -28,7 +28,8 @@
 * **Error Response:**
 
   * **Code:** 404 NOT FOUND <br />
-    **Content:** ```javascript
+    **Content:** 
+    ```json
     {
     "number_of_items": 10,
     "aanbiedingen": [
