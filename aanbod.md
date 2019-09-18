@@ -1,154 +1,200 @@
-**Toon aanbieding**
-----
-  Returns json data about aanbiedingen.
+| URI                                                 | Method | Returns                 |
+| --------------------------------------------------- | ------ | ----------------------- |
+| [/aanbod/v1/aanbiedingen](#retrieve_aanbiedingen)   | GET    | list of aanbiedingen    |
+| [/aanbod/v1/aanbiedingen/:id](#retrieve_aanbieding) | GET    | single aanbieding by id |
 
-* **URL**
+## **Retrieve aanbiedingen**
+
+Returns json data about aanbiedingen.
+
+- **URL**
 
   /aanbod/v1/aanbiedingen
 
-* **Method:**
+- **Method:**
 
   `GET`
-  
-*  **URL Params**
 
-   **Required:**
- 
-   `id=[integer]`
+- **Headers**
 
-* **Data Params**
+  **Required:**
+
+  `API-Key`
+
+- **URL Params**
+
+  **Optional:**
+
+  `limit=[integer]` <br /> `offset=[integer]` <br /> `aanbieding_nummer=[integer]` <br />
+
+- **Success Response:**
+
+  - **Code:** 200 <br />
+    **Content:**
+
+    ```json
+    {
+        "number_of_items": 1,
+        "aanbiedingen": [
+            {
+                "id": 1234567890,
+                "aanbiedingnummer": 100025,
+                "publicatienummer": 1321094,
+                "aanbieding_type": "sequal"
+        ... (see {Retrieve aanbieding} for details)
+    ```
+
+## **Retrieve aanbieding**
+
+Returns json data about an aanbieding.
+
+- **URL**
+
+  /aanbod/v1/aanbiedingen/:id
+
+- **Method:**
+
+  `GET`
+
+- **Headers**
+
+  **Required:**
+
+  `API-Key`
+
+- **URL Params**
 
   None
 
-* **Success Response:**
+- **Success Response:**
 
-  * **Code:** 200 <br />
-    **Content:** `{ id : 12, name : "Michael Bloom" }`
- 
-* **Error Response:**
+  - **Code:** 200 <br />
+    **Content:**
 
-  * **Code:** 404 NOT FOUND <br />
-    **Content:** 
     ```json
     {
-    "number_of_items": 10,
-    "aanbiedingen": [
+      "id": 1234567890,
+      "aanbiedingnummer": 100025,
+      "publicatienummer": 1321094,
+      "aanbieding_type": "sequal",
+      "inwisselbaarheid": "Eenmalig",
+      "communicatie_naam": "Dagje uit",
+      "actie_soort": "Kortingsactie",
+      "actie_jaar": 2019,
+      "pijler": "Cultuur",
+      "titel": "Volksbuurtmuseum",
+      "beschrijving": "Maak er kennis met twee eeuwen dagelijks leven van gewone mensen in Nederland.",
+      "publicatie_datum": "2019-06-14T00:00:00.0000000",
+      "start_datum": "2019-07-01T00:00:00.0000000",
+      "eind_datum": "2020-06-30T00:00:00.0000000",
+      "kortingszin": "Onbeperkt gratis toegang museum",
+      "meer_info_url": "https://www.volksbuurtmuseum.nl",
+      "meer_info_telnr": "0302318292",
+      "meer_info_email": "info@volksbuurtmuseum.nl",
+      "meer_info_wanneer": "alle openingstijden",
+      "reserveren_url": "",
+      "reserveren_telnr": "",
+      "reserveren_email": "",
+      "reserveren_info": "",
+      "pashouder_tips": "",
+      "mag_uitgelicht_worden": true,
+      "is_dezelfde_dag_inwisselbaar": true,
+      "aanbieders": [
         {
-            "id": 2,
-            "aanbiedingnummer": 1000,
-            "publicatienummer": 1000,
-            "aanbieding_type": "_default",
-            "inwisselbaarheid": "One",
-            "actie_soort": "Kortingsactie",
-            "actie_jaar": 2019,
-            "pijler": "Computer",
-            "titel": "Testactie",
-            "beschrijving": "Dit is een test voor CDN afbeeldingen",
-            "publicatie_datum": "2017-05-30T22:00:00.000Z",
-            "start_datum": "2019-06-30T22:00:00.000Z",
-            "eind_datum": "2020-06-30T21:59:59.000Z",
-            "kortingszin": "Dit is een test",
-            "meer_info_url": "http://www.ict2b.nl",
-            "meer_info_telnr": "0172-436152",
-            "meer_info_email": "cees@ict2b.nl",
-            "pashouder_tips": "geen",
-            "mag_uitgelicht_worden": false,
-            "is_dezelfde_dag_inwisselbaar": false,
-            "aanbieders": [
-                {
-                    "id": 4,
-                    "naam": "Testpartner ICT2B",
-                    "url": "http://www.ict2b.nl",
-                    "telnr": "0172436152",
-                    "straat": "Anna van Burenlaan",
-                    "huisnummer": "28",
-                    "postcode": "2404 GM",
-                    "plaats": "Alphen aan den Rijn",
-                    "afbeeldingen": [
-                        {
-                            "id": 1,
-                            "cdn_url": "https://7c598269ce4399c1f4280cb647822944.lswcdn.net/Scherm_klein.png",
-                            "medium": "Web",
-                            "size": "Small"
-                        },
-                        {
-                            "id": 2,
-                            "cdn_url": "https://7c598269ce4399c1f4280cb647822944.lswcdn.net/Scherm_groot.png",
-                            "medium": "Web",
-                            "size": "Large"
-                        }
-                    ],
-                    "tarieven": [
-                        {
-                            "id": 16,
-                            "label": "leeftijd 4 t/m 12 jaar",
-                            "alle_leeftijden": false,
-                            "minimum_leeftijd": 4,
-                            "maximum_leeftijd": 12,
-                            "voorbeeld_tarief": false,
-                            "normaal_tarief": 5,
-                            "korting_type": "Percentage",
-                            "percentage": 20,
-                            "korting_tarief": 4
-                        }
-                    ]
-                }
-            ],
-            "tarieven": [],
-            "locaties": [
-                {
-                    "id": 2,
-                    "titel": "Testpartner ICT2B",
-                    "straat": "Anna van Burenlaan",
-                    "huisnummer": "28",
-                    "postcode": "2404GM",
-                    "plaats": "Alphen aan den Rijn",
-                    "plaats_id": 140,
-                    "gemeente": "Overige Gemeenten",
-                    "latitude": 52.1330914,
-                    "longitude": 4.6530632
-                }
-            ],
-            "aanbodtags": [
-                {
-                    "id": 1,
-                    "naam": "Leuk",
-                    "is_filter": false,
-                    "sort_order": 0
-                }
-            ],
-            "doelgroepen": [],
-            "afbeeldingen": [
-                {
-                    "id": 1,
-                    "cdn_url": "https://7c598269ce4399c1f4280cb647822944.lswcdn.net/Scherm_klein.png",
-                    "medium": "Web",
-                    "size": "Small"
-                },
-                {
-                    "id": 2,
-                    "cdn_url": "https://7c598269ce4399c1f4280cb647822944.lswcdn.net/Scherm_groot.png",
-                    "medium": "Web",
-                    "size": "Large"
-                }
-            ]
-        },
-        ```
-
-  OR
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "You are unauthorized to make this request." }`
-
-* **Sample Call:**
-
-  ```javascript
-    $.ajax({
-      url: "/users/1",
-      dataType: "json",
-      type : "GET",
-      success : function(r) {
-        console.log(r);
+          "id": 1042,
+          "naam": "Nederlands Volksbuurtmuseum",
+          "url": "http://www.volksbuurtmuseum.nl",
+          "telnr": "0302318292",
+          "email": "lysette@volksbuurtmuseum.nl",
+          "straat": "Waterstraat",
+          "huisnummer": "27a",
+          "postcode": "3511BW",
+          "plaats": "Utrecht",
+          "afbeeldingen": [
+            {
+              "id": 3297,
+              "name": "afbeelding_web_groot_03.png",
+              "cdn_url": "https://cdn.intermediad.com/afbeelding_web_groot_03.png",
+              "medium": "Web",
+              "size": "Groot"
+            }
+          ],
+          "tarieven": [
+            {
+              "id": 7322,
+              "label": "Leeftijd 4 t/m 12 jaar",
+              "alle_leeftijden": false,
+              "minimum_leeftijd": 4,
+              "maximum_leeftijd": 12,
+              "voorbeeld_tarief": false,
+              "normaal_tarief": 5.0,
+              "korting_type": "Percentage",
+              "percentage": 40.0,
+              "bedrag": 2.0,
+              "korting_tarief": 3.0
+            }
+          ]
+        }
+      ],
+      "tarieven": [
+        {
+          "id": 6429,
+          "label": "Leeftijd 4 t/m 12 jaar",
+          "alle_leeftijden": false,
+          "minimum_leeftijd": 4,
+          "maximum_leeftijd": 12,
+          "voorbeeld_tarief": false,
+          "normaal_tarief": 5.0,
+          "korting_type": "Percentage",
+          "percentage": 20.0,
+          "bedrag": 1.0,
+          "korting_tarief": 4.0
+        }
+      ],
+      "locaties": [
+        {
+          "id": 3943,
+          "titel": "Volksbuurtmuseum",
+          "straat": "Waterstraat",
+          "huisnummer": "27a",
+          "postcode": "3511BW",
+          "latitude": 52.095262,
+          "longitude": 5.114757,
+          "plaats": {
+            "id": 3214,
+            "naam": "Utrecht",
+            "gemeente": "Utrecht"
+          }
+        }
+      ],
+      "aanbodtags": [
+        {
+          "id": 521,
+          "naam": "Binnen",
+          "is_filter": true,
+          "sort_order": 10
+        }
+      ],
+      "doelgroepen": [
+        {
+          "id": 521,
+          "naam": "Binnen",
+          "sort_order": 10
+        }
+      ],
+      "afbeeldingen": [
+        {
+          "id": 3291,
+          "name": "afbeelding_web_groot_01.png",
+          "cdn_url": "https://cdn.intermediad.com/afbeelding_web_groot_01.png",
+          "medium": "Web",
+          "size": "Groot"
+        }
+      ],
+      "aanbodlink": {
+        "id": 832,
+        "naam": "Andere aanbieding",
+        "kortingszin": "Onbeperkt gratis toegang museum 65+"
       }
-    });
-  ```
+    }
+    ```
