@@ -93,20 +93,6 @@ Logout the user by expiring the token given in the Authorization bearer.
   - **Code:** 204 <br />
     **Message:** User logged out - tokens expired <br />
 
-- **Error Response:**
-
-  - **Code:** 404 <br />
-    **Message:** Token niet gerelateerd aan pashouder
-
-  - **Code:** 422 <br />
-    **Message:** Login naam niet uniek
-
-  - **Code:** 422 <br />
-    **Message:** Wachtwoord voldoet niet aan eisen - (8 karakters, 1 hoofdletter, 1 kleine letter, 1 speciaal karakter en 1 numeriek karakter)
-
-  - **Code:** 422 <br />
-    **Message:** Login naam niet uniek
-
 ## **Refresh**
 
 Refresh expiry date of the token given in the Authorization bearer.
@@ -212,9 +198,17 @@ Change a pashouder password using a PasswordToken
 
 - **URL Params**
 
-  **Required:**
+  None
 
-  `login_name=[string]`
+- **Data Params**
+
+  ``password` attribute is required in body
+
+  ```javascript
+  {
+    "password": "s0m3$3cr3T"
+  }
+  ```
 
 - **Success Response:**
 
@@ -232,11 +226,8 @@ Change a pashouder password using a PasswordToken
 
 - **Error Response:**
 
-  - **Code:** 400 <br />
-    **Message:** Mandatory [login_name] query parameter empty
+  - **Code:** 422 <br />
+    **Message:** Password is empty or missing in request body
 
-  - **Code:** 401 <br />
-    **Message:** User not found
-
-  - **Code:** 401 <br />
-    **Message:** User is inactive
+  - **Code:** 422 <br />
+    **Message:** Password is not valid - please ensure a minimum of 8 characters, mixed case, at least one special and one numeric character)
