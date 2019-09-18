@@ -26,8 +26,8 @@ An AccessToken is valid for a specific period of time. Every time an AccessToken
 | Sales   | [/sales/v1/pashouder](sales.md#retrieve-pashouder)                                   |  `GET`   | retrieve a single pashouder by token                            |
 | Sales   | [/sales/v1/pashouder](sales.md#update-pashouder)                                     |  `POST`  | update pashouder by token                                       |
 |         |                                                                                      |          |                                                                 |
-| Token   | [/token/v1/login](#login)                                                            |  `POST`  | login using Basic authentication and return an AccessToken      |
-| Token   | [/token/v1/login](#logout)                                                           | `DELETE` | logout using Bearer authentication and expiring the AccessToken |
-| Token   | [/token/v1/refresh](#refresh)                                                        |  `POST`  | refresh the given AccessToken expiry date                       |
-| Token   | [/token/v1/passwordtoken](#passwordtoken)                                            |  `GET`   | retrieve a password token by login_name                         |
-| Token   | [/token/v1/changepassword](#passwordtoken)                                           |  `POST`  | change password for pashouder related to provided PasswordToken |
+| Token   | [/token/v1/login](token.md#login)                                                    |  `POST`  | login using Basic authentication and return an AccessToken      |
+| Token   | [/token/v1/login](token.md#logout)                                                   | `DELETE` | logout using Bearer authentication and expiring the AccessToken |
+| Token   | [/token/v1/refresh](token.md#refresh)                                                |  `POST`  | refresh the given AccessToken expiry date                       |
+| Token   | [/token/v1/passwordtoken](token.md#passwordtoken)                                    |  `GET`   | retrieve a password token by login_name                         |
+| Token   | [/token/v1/changepassword](token.md#passwordtoken)                                   |  `POST`  | change password for pashouder related to provided PasswordToken |
