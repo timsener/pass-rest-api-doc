@@ -40,8 +40,7 @@ Returns json data about aanbiedingen.
                 "id": 1234567890,
                 "aanbiedingnummer": 100025,
                 "publicatienummer": 1321094,
-                "aanbieding_type": "sequal"
-        ... (see {Retrieve aanbieding} for details)
+                "aanbieding_type": "sequal"...
     ```
 
 ## **Retrieve aanbieding**
