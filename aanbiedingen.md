@@ -1,7 +1,7 @@
 | URI                                                 | Method | Returns                 |
 | --------------------------------------------------- | ------ | ----------------------- |
-| [/aanbod/v1/aanbiedingen](#retrieve_aanbiedingen)   | GET    | list of aanbiedingen    |
-| [/aanbod/v1/aanbiedingen/:id](#retrieve_aanbieding) | GET    | single aanbieding by id |
+| [/aanbod/v1/aanbiedingen](#retrieve-aanbiedingen)   | GET    | list of aanbiedingen    |
+| [/aanbod/v1/aanbiedingen/:id](#retrieve-aanbieding) | GET    | single aanbieding by id |
 
 ## **Retrieve aanbiedingen**
 
@@ -32,7 +32,7 @@ Returns json data about aanbiedingen.
   - **Code:** 200 <br />
     **Content:**
 
-    ```json
+    ```javascript
     {
         "number_of_items": 1,
         "aanbiedingen": [
@@ -40,8 +40,11 @@ Returns json data about aanbiedingen.
                 "id": 1234567890,
                 "aanbiedingnummer": 100025,
                 "publicatienummer": 1321094,
-                "aanbieding_type": "sequal"...
+                "aanbieding_type": "sequal"
+                ...
     ```
+
+    see [/aanbod/v1/aanbiedingen/:id](#retrieve-aanbieding) for aanbieding entity details
 
 ## **Retrieve aanbieding**
 
