@@ -14,6 +14,8 @@ Once a valid token has been acquired - the `Authorization` header can be formed 
 
 An AccessToken is valid for a specific period of time. Every time an AccessToken is succesfully used, the expiry date/time of the token is set to the maximum days configured in the API configuration.
 
+## API Services Operations
+
 | Service | URI                                                                                  |  Method  | Description                                                     |
 | ------- | ------------------------------------------------------------------------------------ | :------: | --------------------------------------------------------------- |
 | Aanbod  | [/aanbod/v1/aanbiedingen](aanbiedingen.md#retrieve-aanbiedingen)                     |  `GET`   | retrieve a list of aanbiedingen                                 |
