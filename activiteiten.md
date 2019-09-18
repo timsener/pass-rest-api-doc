@@ -1,9 +1,9 @@
-| URI                                                                   | Method | Returns                          |
-| --------------------------------------------------------------------- | ------ | -------------------------------- |
-| [/aanbod/v1/activiteiten](#retrieve-activiteiten)                     | GET    | list of activiteiten             |
-| [/aanbod/v1/activiteiten/:id](#retrieve-activiteit)                   | GET    | single activiteit by id          |
-| [/aanbod/v1/aanbiederactiviteiten](#retrieve-aanbiederactiviteiten)   | GET    | list of aanbiederactiviteiten    |
-| [/aanbod/v1/aanbiederactiviteiten/:id](#retrieve-aanbiederactiviteit) | GET    | single aanbiederactiviteit by id |
+| URI                                                                   | Method | Returns                                     |
+| --------------------------------------------------------------------- | ------ | ------------------------------------------- |
+| [/aanbod/v1/activiteiten](#retrieve-activiteiten)                     | `GET`  | retrieve a list of activiteiten             |
+| [/aanbod/v1/activiteiten/:id](#retrieve-activiteit)                   | `GET`  | retrieve a single activiteit by id          |
+| [/aanbod/v1/aanbiederactiviteiten](#retrieve-aanbiederactiviteiten)   | `GET`  | retrieve a list of aanbiederactiviteiten    |
+| [/aanbod/v1/aanbiederactiviteiten/:id](#retrieve-aanbiederactiviteit) | `GET`  | retrieve a single aanbiederactiviteit by id |
 
 ## **Retrieve activiteiten**
 

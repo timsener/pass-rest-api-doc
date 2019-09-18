@@ -1,7 +1,7 @@
-| URI                                                 | Method | Returns                 |
-| --------------------------------------------------- | ------ | ----------------------- |
-| [/aanbod/v1/aanbiedingen](#retrieve-aanbiedingen)   | GET    | list of aanbiedingen    |
-| [/aanbod/v1/aanbiedingen/:id](#retrieve-aanbieding) | GET    | single aanbieding by id |
+| URI                                                 | Method | Returns                            |
+| --------------------------------------------------- | ------ | ---------------------------------- |
+| [/aanbod/v1/aanbiedingen](#retrieve-aanbiedingen)   | `GET`  | retrieve a list of aanbiedingen    |
+| [/aanbod/v1/aanbiedingen/:id](#retrieve-aanbieding) | `GET`  | retrieve a single aanbieding by id |
 
 ## **Retrieve aanbiedingen**
 
