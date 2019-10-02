@@ -11,7 +11,7 @@ Returns json data about activiteiten.
 
 - **URL**
 
-  /aanbod/v1/aanbiedingen
+  /aanbod/v1/activiteiten
 
 - **Method:**
 
@@ -123,7 +123,7 @@ Returns json data about aanbiederactiviteiten.
 
   **Required:**
 
-  `aanbieding_nummer=[integer]` **OR** `activiteit_nummer=[integer]`
+  `activiteit_id=[integer]` **OR** `activiteit_nummer=[integer]`
 
   **Optional:**
 
