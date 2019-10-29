@@ -137,6 +137,12 @@ Returns json data about pashouder.
         ]
     }
     ```
+    
+- **Error Response:**
+
+  - **Code:** 404 <br />
+    **Message:** Token not related to pashouder
+
 
 ## **Update pashouder**
 
@@ -168,6 +174,7 @@ Updates pashouder and return json data about pashouder
   {
     "login_name": "j.doe@gmail.com",
     "password": "s0m3$3cr3T",
+    "password_current": "curr3ntp@ss",
     "voornaam": "John",
     "initialen": "J",
     "tussenvoegsel": "",
@@ -184,7 +191,8 @@ Updates pashouder and return json data about pashouder
     **Message:** OK <br />
     OR
   - **Code:** 204 <br />
-    **Message:** geen wijzigingen gevonden<br />
+    **Message:** No changes found<br />
+
     **Description:** returns same data as Retrieve pashouder operation but with updated data <br />
 
     **Content:**
@@ -202,13 +210,13 @@ Updates pashouder and return json data about pashouder
 - **Error Response:**
 
   - **Code:** 404 <br />
-    **Message:** Token niet gerelateerd aan pashouder
+    **Message:** Token not related to pashouder
 
-  - **Code:** 422 <br />
-    **Message:** Login naam niet uniek
+  - **Code:** 406 <br />
+    **Message:** Login name already taken
 
-  - **Code:** 422 <br />
-    **Message:** Wachtwoord voldoet niet aan eisen - (8 karakters, 1 hoofdletter, 1 kleine letter, 1 speciaal karakter en 1 numeriek karakter)
+  - **Code:** 406 <br />
+    **Message:** Current password is not valid {password_current}
 
-  - **Code:** 422 <br />
-    **Message:** Login naam niet uniek
+  - **Code:** 406 <br />
+    **Message:** Password not valid. A password needs to consist of: (8 characters, 1 uppercase, 1 lowercase, 1 special en 1 numeric character)
