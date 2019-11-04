@@ -1,7 +1,8 @@
-| URI                                        | Method | Returns                             |
-| ------------------------------------------ | ------ | ----------------------------------- |
-| [/sales/v1/pashouder](#retrieve-pashouder) | `GET`  | retrieve pashouder details by token |
-| [/sales/v1/pashouder](#update-pashouder)   | `POST` | update pashouder by token           |
+| URI                                                | Method | Returns                             |
+| -------------------------------------------------- | ------ | ----------------------------------- |
+| [/sales/v1/pashouder](#retrieve-pashouder)         | `GET`  | retrieve pashouder details by token |
+| [/sales/v1/pashouder](#update-pashouder)           | `POST` | update pashouder by token           |
+| [/sales/v1/registerpashouder](#register-pashouder) | `POST` | register pashouder to account       |
 
 ## **Retrieve pashouder**
 
@@ -36,6 +37,7 @@ Returns json data about pashouder.
     ```javascript
     {
         "id": 1234567890,
+        "has_account": true,
         "login_name": "john.doe@gmail.com",
         "voornaam": "John",
         "initialen": "J",
@@ -200,6 +202,7 @@ Updates pashouder and return json data about pashouder
     ```javascript
     {
         "id": 1234567890,
+        "has_account": true,
         "login_name": "john.doe@gmail.com",
         "voornaam": "John",
         ...
@@ -220,3 +223,77 @@ Updates pashouder and return json data about pashouder
 
   - **Code:** 406 <br />
     **Message:** Password not valid. A password needs to consist of: (8 characters, 1 uppercase, 1 lowercase, 1 special en 1 numeric character)
+
+## **Register pashouder**
+
+Register account on existing pashouder
+
+- **URL**
+
+  /sales/v1/registerashouder
+
+- **Method:**
+
+  `POST`
+
+- **Headers**
+
+  **Required:**
+
+  `API-Key`
+
+- **URL Params**
+
+  None
+
+- **Data Params**
+
+  All elements in the following body are required. {id} refers to the pashouder id to which the account needs to be registered.
+
+  ```javascript
+    {
+        "id": 1234567890,
+        "login_name": "john.doe@gmail.com",
+        "password": "$0m35ecr3T"
+    }
+  ```
+
+- **Success Response:**
+
+  - **Code:** 200 <br />
+    **Message:** OK <br />
+
+    **Description:** returns same data as Retrieve pashouder operation but with updated data <br />
+
+    **Content:**
+
+    ```javascript
+    {
+        "id": 1234567890,
+        "has_account": true,
+        "login_name": "john.doe@gmail.com",
+        "voornaam": "John",
+        ...
+    ```
+
+    see [/sales/v1/pashouder](#retrieve-pashouder) for pashouder entity details
+
+- **Error Response:**
+
+  - **Code:** 406 <br />
+    **Message:** {id} attribute missing or empty
+
+  - **Code:** 406 <br />
+    **Message:** Pashouder not found for {id}: XXXXXXX
+
+  - **Code:** 406 <br />
+    **Message:** {login_name} is empty or missing
+
+  - **Code:** 406 <br />
+    **Message:** {login_name} already taken
+
+  - **Code:** 406 <br />
+    **Message:** {password} is empty or missing
+
+  - **Code:** 406 <br />
+    **Message:** {password} not valid: [message containing invalid properties in nl_NL]
