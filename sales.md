@@ -139,12 +139,11 @@ Returns json data about pashouder.
         ]
     }
     ```
-    
+
 - **Error Response:**
 
   - **Code:** 404 <br />
     **Message:** Token not related to pashouder
-
 
 ## **Update pashouder**
 
@@ -170,13 +169,13 @@ Updates pashouder and return json data about pashouder
 
 - **Data Params**
 
-  Minimum of one and any combination of any of the attributes in the JSON body below.
+  Minimum of one and any combination of any of the attributes in the JSON body below with the exception of {password} and {password_current} which always need to be combined
 
   ```javascript
   {
     "login_name": "j.doe@gmail.com",
     "password": "s0m3$3cr3T",
-    "password_current": "curr3ntp@ss",
+    "password_current": "curr3ntp@ss", // required in combination with {password}
     "voornaam": "John",
     "initialen": "J",
     "tussenvoegsel": "",

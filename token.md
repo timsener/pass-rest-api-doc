@@ -1,10 +1,10 @@
-| URI                                        | Method   | Returns                                                         |
-| ------------------------------------------ | -------- | --------------------------------------------------------------- |
-| [/token/v1/login](#login)                  | `POST`   | login using Basic authentication and return an AccessToken      |
-| [/token/v1/login](#logout)                 | `DELETE` | logout using Bearer authentication and expiring the AccessToken |
-| [/token/v1/refresh](#refresh)              | `POST`   | refresh the given AccessToken expiry date                       |
-| [/token/v1/passwordtoken](#passwordtoken)  | `POST`   | retrieve a password token by login_name                         |
-| [/token/v1/changepassword](#passwordtoken) | `POST`   | change password for pashouder related to provided PasswordToken |
+| URI                                         | Method   | Returns                                                         |
+| ------------------------------------------- | -------- | --------------------------------------------------------------- |
+| [/token/v1/login](#login)                   | `POST`   | login using Basic authentication and return an AccessToken      |
+| [/token/v1/login](#logout)                  | `DELETE` | logout using Bearer authentication and expiring the AccessToken |
+| [/token/v1/refresh](#refresh)               | `POST`   | refresh the given AccessToken expiry date                       |
+| [/token/v1/passwordtoken](#passwordtoken)   | `POST`   | retrieve a password token by login_name                         |
+| [/token/v1/changepassword](#changepassword) | `POST`   | change password for pashouder related to provided PasswordToken |
 
 ## **Login**
 
@@ -178,7 +178,7 @@ Request a PasswordToken required for a password reset
   - **Code:** 401 <br />
     **Message:** User is inactive
 
-## **Passwordtoken**
+## **ChangePassword**
 
 Change a pashouder password using a PasswordToken
 
