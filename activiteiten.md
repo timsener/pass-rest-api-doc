@@ -97,6 +97,13 @@ Returns json data about an activiteit.
           "is_filter": true,
           "sort_order": 20
         }
+      ],
+      "budgetten": [
+        {
+          "id": 843,
+          "code": "BS_2019",
+          "naam": "Basisschool"
+        }
       ]
     }
     ```
