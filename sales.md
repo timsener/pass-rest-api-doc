@@ -46,7 +46,7 @@ Returns json data about pashouder.
         "volledige_naam": "J. Doe",
         "telefoon_nummer": "020-1234567",
         "mobiel_nummer": "06-12345678",
-        "email_adres": "john.doe@gmail.com",
+        "emailadres": "john.doe@gmail.com",
         "geslacht": "Man",
         "geboortedatum": "1974-06-14T00:00:00.0000000",
         "foto_cdn_url": "https://cdn.intermediad.nl/content/xKLDKyuN6L8OY",
@@ -106,7 +106,7 @@ Returns json data about pashouder.
                 "volledige_naam": "J. Doe",
                 "telefoon_nummer": "020-1234567",
                 "mobiel_nummer": "06-12345678",
-                "email_adres": "john.doe@gmail.com",
+                "emailadres": "john.doe@gmail.com",
                 "geslacht": "Man",
                 "geboortedatum": "1974-06-14T00:00:00.0000000",
                 "foto_cdn_url": "https://cdn.intermediad.nl/content/xKLDKyuN6L8OY",
@@ -182,7 +182,7 @@ Updates pashouder and return json data about pashouder
     "achternaam": "Doe",
     "telefoon_nummer": "0201234567",
     "mobiel_nummer": "0612345678",
-    "email_adres": "j.doe@gmail.com"
+    "emailadres": "j.doe@gmail.com"
   }
   ```
 
