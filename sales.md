@@ -3,6 +3,7 @@
 | [/sales/v1/pashouder](#retrieve-pashouder)         | `GET`  | retrieve pashouder details by token |
 | [/sales/v1/pashouder](#update-pashouder)           | `POST` | update pashouder by token           |
 | [/sales/v1/registerpashouder](#register-pashouder) | `POST` | register pashouder to account       |
+| [/sales/v1/pas](#retrieve-pas)                     | `GET`  | retrieve pas details by pasnummer   |
 
 ## **Retrieve pashouder**
 
@@ -297,3 +298,62 @@ Register account on existing pashouder
 
   - **Code:** 406 <br />
     **Message:** {password} not valid: [message containing invalid properties in nl_NL]
+
+## **Retrieve pas**
+
+Returns json data about pas.
+
+- **URL**
+
+  /sales/v1/pas
+
+- **Method:**
+
+  `GET`
+
+- **Headers**
+
+  **Required:**
+
+  `Authorization` (type: bearer)
+
+- **URL Params**
+
+  **Optional:**
+
+  `include_balance=[boolean]` (include card balance information >> default: false)
+
+- **Success Response:**
+
+  - **Code:** 200 <br />
+    **Message:** OK <br />
+    **Content:** <br />
+
+    ```javascript
+    {
+        "id": 3618,
+        "pasnummer": 43635824,
+        "pasnummer_volledig": "6064367007843635824",
+        "categorie_code": "C",
+        "categorie": "Standaardpas",
+        "balance": 0,
+        "balance_update_time": "2019-10-28T19:41:08.000Z",
+        "actief": true,
+        "passoort": {
+            "id": 5,
+            "naam": "Dordtpas"
+        },
+        "geldigheid": [
+            {
+                "geldig_vanaf": "2019-09-30T22:00:00.000Z",
+                "geldig_tm": "2020-12-31T22:59:59.000Z"
+            }
+        ]
+    }
+    ```
+
+- **Error Response:**
+
+  - **Code:** 404 <br />
+    **Message:** Pas not found for pasnummer: XXXXXXXX
+
