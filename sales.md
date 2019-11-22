@@ -305,7 +305,7 @@ Returns json data about pas.
 
 - **URL**
 
-  /sales/v1/pas
+  /sales/v1/pas/{pasnummer}
 
 - **Method:**
 
@@ -318,6 +318,10 @@ Returns json data about pas.
   `Authorization` (type: bearer)
 
 - **URL Params**
+
+  **Required**
+
+  `pasnummer=XXXXXX`
 
   **Optional:**
 
