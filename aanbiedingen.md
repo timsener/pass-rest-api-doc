@@ -121,6 +121,22 @@ Returns json data about an aanbieding.
               "size": "Groot"
             }
           ],
+          "locaties": [
+            {
+              "id": 3943,
+              "titel": "Volksbuurtmuseum",
+              "straat": "Waterstraat",
+              "huisnummer": "27a",
+              "postcode": "3511BW",
+              "latitude": 52.095262,
+              "longitude": 5.114757,
+              "plaats": {
+                "id": 3214,
+                "naam": "Utrecht",
+                "gemeente": "Utrecht"
+              }
+            }
+          ],
           "tarieven": [
             {
               "id": 7322,
