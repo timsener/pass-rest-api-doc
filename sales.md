@@ -248,12 +248,13 @@ Register account on existing pashouder
 
 - **Data Params**
 
-  Elements {pashouder_id} or {pasnummer} are required to identify an existing pashouder for account registration. {login_name} and {passowrd} are required to execute the registration.
+  Elements {pashouder_id} or {pasnummer} combined with {geboortedatum} are required to identify an existing pashouder for account registration. {login_name} and {passowrd} are required to execute the registration.
 
   ```javascript
     {
         "pashouder_id": "050523913912",
         "pasnummer": 95064162,
+        "geboortedatum": "1974-06-14T00:00:00.000Z",
         "login_name": "john.doe@gmail.com",
         "password": "$0m35ecr3T"
     }
@@ -282,7 +283,7 @@ Register account on existing pashouder
 - **Error Response:**
 
   - **Code:** 406 <br />
-    **Message:** Either {pashouder_id} or {pasnummer} attributes are mandatory and are missing or empty
+    **Message:** Either {pashouder_id} or a combination of {geboortedatum} and {pasnummer} attributes are mandatory and are missing or empty
 
   - **Code:** 406 <br />
     **Message:** Pashouder not found for {pashouder_id}: XXXXXX and {pasnummer}: XXXXXX
