@@ -35,7 +35,8 @@ Returns json data about aanbieding transactions.
 
     ```javascript
     {
-        "number_of_items": 1,
+        "number_of_items": 20,
+        "total_items:" 36,
         "transacties": [
             {
                 "id": 4119,
@@ -119,7 +120,8 @@ Returns json data about budget transactions.
 
     ```javascript
     {
-        "number_of_items": 1,
+        "number_of_items": 20,
+        "total_items:" 42,
         "transacties": [
             {
                 "id": 137,
