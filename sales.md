@@ -4,6 +4,7 @@
 | [/sales/v1/pashouder](#update-pashouder)           | `POST` | update pashouder by token           |
 | [/sales/v1/registerpashouder](#register-pashouder) | `POST` | register pashouder to account       |
 | [/sales/v1/pas](#retrieve-pas)                     | `GET`  | retrieve pas details by pasnummer   |
+| [/sales/v1/pas](#toggle-pas)                       | `POST` | toggle pas status (block/unblock)   |
 
 ## **Retrieve pashouder**
 
@@ -362,3 +363,61 @@ Returns json data about pas.
   - **Code:** 404 <br />
     **Message:** Pas not found for pasnummer: XXXXXXXX
 
+## **Toggle pas**
+
+Toggle pas status (block/unblock)
+
+- **URL**
+
+  /sales/v1/togglepas/{pasnummer}
+
+- **Method:**
+
+  `POST`
+
+- **Headers**
+
+  **Required:**
+
+  `Authorization` (type: bearer)
+
+- **URL Params**
+
+  **Required:**
+  
+  `pasnummer`
+
+- **Data Params**
+
+  None
+
+- **Success Response:**
+
+  - **Code:** 200 <br />
+    **Message:** OK <br />
+
+    **Description:** returns same data as Get pas operation but with updated status <br />
+
+    **Content:**
+
+    ```javascript
+        {
+        "id": 3618,
+        "pasnummer": 43635824,
+        "pasnummer_volledig": "6064367007843635824",
+        "categorie_code": "C",
+        ...
+    ```
+
+    see [/sales/v1/pas](#retrieve-pas) for pas entity details
+
+- **Error Response:**
+
+  - **Code:** 404 <br />
+    **Message:** Pas not found for pasnummer: XXXXXX
+
+  - **Code:** 406 <br />
+    **Message:** Pas has been replaced - status cannot be changed
+
+  - **Code:** 406 <br />
+    **Message:** Error occurred while trying to change pas status
