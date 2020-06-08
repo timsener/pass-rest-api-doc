@@ -4,7 +4,7 @@
 | [/sales/v1/pashouder](#update-pashouder)           | `POST` | update pashouder by token           |
 | [/sales/v1/registerpashouder](#register-pashouder) | `POST` | register pashouder to account       |
 | [/sales/v1/pas](#retrieve-pas)                     | `GET`  | retrieve pas details by pasnummer   |
-| [/sales/v1/pas](#toggle-pas)                       | `POST` | toggle pas status (block/unblock)   |
+| [/sales/v1/togglepas](#toggle-pas)                 | `POST` | toggle pas status (block/unblock)   |
 
 ## **Retrieve pashouder**
 
