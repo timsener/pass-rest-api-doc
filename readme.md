@@ -25,6 +25,11 @@ An AccessToken is valid for a specific period of time. Every time an AccessToken
 | Aanbod      | [/aanbod/v1/aanbiederactiviteiten](activiteiten.md#retrieve-aanbiederactiviteiten)   |  `GET`   | retrieve a list of aanbiederactiviteiten                        |
 | Aanbod      | [/aanbod/v1/aanbiederactiviteiten/:id](activiteiten.md#retrieve-aanbiederactiviteit) |  `GET`   | retrieve a single aanbiederactiviteit by id                     |
 |             |                                                                                      |          |                                                                 |
+| Aanvragen   | [/aanvragen/v2/pasaanvraag](aanvragen.md#initiate-pasaanvraag)                       |  `POST`  | initiate a new pasaanvraag                                      |
+| Aanvragen   | [/aanvragen/v2/pasaanvraag/{uuid}](aanvragen.md#update-pasaanvraag)                  |  `POST`  | update an existing pasaanvraag                                  |
+| Aanvragen   | [/aanvragen/v2/pasaanvraag/{uuid}](aanvragen.md#retrieve-pasaanvraag)                |  `GET`   | retrieve a pasaanvraag                                          |
+| Aanvragen   | [/aanvragen/v2/document/{uuid}](aanvragen.md#upload-document)                        |  `POST`  | upload binary content for document                              |
+|             |                                                                                      |          |                                                                 |
 | Sales       | [/sales/v1/pashouder](sales.md#retrieve-pashouder)                                   |  `GET`   | retrieve a single pashouder by token                            |
 | Sales       | [/sales/v1/pashouder](sales.md#update-pashouder)                                     |  `POST`  | update pashouder by token                                       |
 | Sales       | [/sales/v1/registerpashouder](sales.md#register-pashouder)                           |  `POST`  | register pashouder to account                                   |
