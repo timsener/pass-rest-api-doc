@@ -3,6 +3,7 @@
 | [/aanvragen/v2/pasaanvraag](#initiate-pasaanvraag)        | `POST` | initiate a new pasaanvraag          |
 | [/aanvragen/v2/pasaanvraag/{uuid}](#update-pasaanvraag)   | `POST` | update an existing pasaanvraag      |
 | [/aanvragen/v2/pasaanvraag/{uuid}](#retrieve-pasaanvraag) | `GET`  | retrieve a pasaanvraag              |
+| [/aanvragen/v2/document/{uuid}](#upload-document)         | `POST` | upload binary content for document  |
 
 ## **Initiate pasaanvraag**
 
@@ -95,6 +96,32 @@ Updates a previously initiated pasaanvraag found by the provided uuid. Objects p
   `uuid`
   
 - **Data Params**
+
+| Name                    | Type        | Send? | Description                                                  |
+| :---------------------- | :---------- | :---- | :----------------------------------------------------------- |
+| `aanvraag_id`           | enum        | No    | |
+| `aanvraag_uuid`         | string      | No    | |
+| `aanvraag_status`       | string      | No    | |
+| `aanvraag_api_status`   | string      | Yes   | use to submit aanvraag with value 'Ingediend' |
+
+Other objects/elements are described below.
+
+```javascript	
+	{
+		"aanvraag_id": 1000001,
+		"aanvraag_uuid": "550e8400-e29b-41d4-a716-446655440000",
+		"aanvraag_status": "Concept",
+		"aanvraag_api_status": "Concept",
+		"aanvrager": {},
+		"partner": {},
+		"kinderen": [{}],
+		"woonadres": {},
+		"postadres": {},
+		"feiten": [{
+			"documenten": [{}]
+		}]
+	}
+```
 
 **Aanvrager**
 
@@ -228,20 +255,21 @@ This address can be provided if an alternative address is required.
 ```
 
 **Feiten**
-This object type can contain several type of facts differentiated by `{type_feit}`. For every fact, documents can- or have to be provided - see the table below for all fact types.
+This object type can contain several type of facts differentiated by `{type_feit}`. For every fact at least one document has to be provided and for some facts Inkomen (or income) is mandatory. See the table below for all fact types.
 
-| Type feit              | Description                     | Number of docs  |
-| :--------------------- | :------------------------------ | --------------- |
-| Salaris                | Vast salaris                    | 1 |
-| VariableLoon           | Variabel inkomen                | 3 |
-| UitkeringAOW           | Uitkering of AOW                | 1 |
-| Pensioen               | Pensioen                        | 1 |
-| Anders                 | Andere inkomstenbronnen         | 1 |
-| Overig                 | Overige bewijsstukken           | 1 |
-| WSNP                   | Wet schuldsanering              | 1 |
-| GezinsvervangendTehuis | Kind ingeschreven in tehuis     | 1 |
-| Zorginstelling         | Ingeschreven in zorginstelling  | 1 |
+Every document announced using the {documents} array needs to be uploaded before an aanvraag can be submitted.
 
+| Type feit              | Description                     | Inkomen* | Number of docs  |
+| :--------------------- | :------------------------------ | :------- | --------------- |
+| Salaris                | Vast salaris                    | Yes      | 1 |
+| VariableLoon           | Variabel inkomen                | Yes      | 3 |
+| UitkeringAOW           | Uitkering of AOW                | Yes      | 1 |
+| Pensioen               | Pensioen                        | Yes      | 1 |
+| Anders                 | Andere inkomstenbronnen         | Yes      | 1 |
+| Overig                 | Overige bewijsstukken           | No       | 1 |
+| WSNP                   | Wet schuldsanering              | No       | 1 |
+| GezinsvervangendTehuis | Kind ingeschreven in tehuis     | No       | 1 |
+| Zorginstelling         | Ingeschreven in zorginstelling  | No       | 1 |
 
 | Name                                         | Type        | Send? | Description                                                  |
 | :------------------------------------------- | :---------- | :---- | :----------------------------------------------------------- |
@@ -416,3 +444,79 @@ Retrieve an existing pasaanvraag by uuid and return json data about this pasaanv
   - **Code:** 404 <br />
     **Message:** PasAanvraag for {aanvraag\_id}: [aanvraag\_id] not found **or** PasAanvraag for {aanvraag\_uuid}: [aanvraag\_uuid] not found
     
+
+## **Upload document**
+
+Upload binary content for a previously anounced document {feiten}{documenten} for a given {document_uuid}.
+
+- **URL**
+
+  /aanvraag/v2/document/{document_uuid}
+
+- **Method:**
+
+  `POST`
+
+- **Headers**
+
+  **Required:**
+
+  `API-Key`
+  
+  `Content-Type` - file type (ie `application/pdf` for pdf or `image/jpeg` for jpg)
+  
+  **Allowed content types**
+  
+  | File type | Content type    |
+  | :-------- | :-------------- |
+  | pdf       | application/pdf |
+  | jpg/jpeg  | image/jpeg      |
+  | gif       | image/gif       |
+  | bmp       | image/bmp       |
+  | heic      | image/heic      |
+  | png       | image/png       |
+  | tif/tiff  | image/tiff      |
+  
+  
+- **URL Params**
+
+  `document_uuid`
+  
+- **Data Params**
+
+  `body` of the message should contain the binary contents of the file to be uploaded
+
+- **Success Response:**
+
+  A succesful upload will send a response like below. The document in {feiten}{documenten} will show {bestand_ontvangen} as `true`
+
+  - **Code:** 200 <br />
+    **Message:** OK <br />
+    **Content:** <br />
+
+    ```javascript
+	{
+	    "result": {
+	        "code": 200,
+	        "message": "Binary content received for {document_uuid}: 903ebba9-0533-40ab-8865-f9657cfd8d5c"
+	    }
+	}
+    ```
+	
+- **Error Response:**
+
+  - **Code:** 404 <br />
+    **Message:** Document for {document_uuid}: 903ebba9-0533-40ab-8865-f9657cfd8d5c not found'
+  - **Code:** 406 <br />
+    **Message:** Aanvraag with {aanvraag_uuid}: 550e8400-e29b-41d4-a716-446655440000 has already been submitted and cannot be changed anymore
+  - **Code:** 400 <br />
+    **Message:** Content-Type header missing
+  - **Code:** 400 <br />
+    **Message:** Content-Type application/xml not allowed for document'
+  - **Code:** 400 <br />
+    **Message:** No binary content received {document_uuid}: 903ebba9-0533-40ab-8865-f9657cfd8d5c
+  - **Code:** 406 <br />
+    **Message:** An error occurred while processing {document_uuid}: 903ebba9-0533-40ab-8865-f9657cfd8d5c
+    
+  
+  
