@@ -96,7 +96,7 @@ Updates a previously initiated pasaanvraag found by the provided uuid. Objects p
   
 - **Data Params**
 
-###Aanvrager
+**Aanvrager**
 
 | Name                                | Type        | Send? | Description                                                  |
 | :---------------------------------- | :---------- | :---- | :----------------------------------------------------------- |
@@ -132,7 +132,7 @@ Updates a previously initiated pasaanvraag found by the provided uuid. Objects p
     }
 ```
     
-###Partner
+**Partner**
 
 | Name                                | Type        | Send? | Description                                                  |
 | :---------------------------------- | :---------- | :---- | :----------------------------------------------------------- |
@@ -159,7 +159,7 @@ Updates a previously initiated pasaanvraag found by the provided uuid. Objects p
 	}
 ```
 
-###Kinderen
+**Kinderen**
 
 ```javascript
 	{
@@ -179,7 +179,7 @@ Updates a previously initiated pasaanvraag found by the provided uuid. Objects p
 	}
 ```
     
-###Woonadres
+**Woonadres**
 This address cannot be changed as it is provided by the datasource of the given `{identity}`.
 
 | Name                                | Type        | Send? | Description                                                  |
@@ -203,7 +203,7 @@ This address cannot be changed as it is provided by the datasource of the given 
 	}
 ```
 
-###Postadres
+**Postadres**
 This address can be provided if an alternative address is required.
 
 | Name                                | Type        | Send? | Description                                                  |
@@ -227,7 +227,7 @@ This address can be provided if an alternative address is required.
 	}
 ```
 
-###Feiten
+**Feiten**
 This object type can contain several type of facts differentiated by `{type_feit}`. For every fact, documents can- or have to be provided - see the table below for all fact types.
 
 | Type feit              | Description                     | Number of docs  |
