@@ -1,8 +1,8 @@
 | URI                                                       | Method | Returns                             |
 | --------------------------------------------------------- | ------ | ----------------------------------- |
-| [/aanvragen/v2/pasaanvraag](#initiate_pasaanvraag)        | `POST` | initiate a new pasaanvraag          |
-| [/aanvragen/v2/pasaanvraag/{uuid}](#update_pasaanvraag)   | `POST` | update an existing pasaanvraag      |
-| [/aanvragen/v2/pasaanvraag/{uuid}](#retrieve_pasaanvraag) | `GET`  | retrieve a pasaanvraag              |
+| [/aanvragen/v2/pasaanvraag](#initiate-pasaanvraag)        | `POST` | initiate a new pasaanvraag          |
+| [/aanvragen/v2/pasaanvraag/{uuid}](#update-pasaanvraag)   | `POST` | update an existing pasaanvraag      |
+| [/aanvragen/v2/pasaanvraag/{uuid}](#retrieve-pasaanvraag) | `GET`  | retrieve a pasaanvraag              |
 
 ## **Initiate pasaanvraag**
 
@@ -61,7 +61,7 @@ Initiate a new pasaanvraag by identity and return json data about the pasaanvraa
 	        "initialen": "J",
 		... 
     ```
-	see [/aanvragen/v2/pasaanvraag](#retrieve_pasaanvraag) for pashouder entity details
+	see [/aanvragen/v2/pasaanvraag](#retrieve-pasaanvraag) for pashouder entity details
 	
 - **Error Response:**
 
@@ -293,7 +293,7 @@ This object type can contain several type of facts differentiated by `{type_feit
 	        "initialen": "J",
 		... 
     ```
-	see [/aanvragen/v2/pasaanvraag](#retrieve_pasaanvraag) for pashouder entity details
+	see [/aanvragen/v2/pasaanvraag](#retrieve-pasaanvraag) for pashouder entity details
 	
 - **Error Response:**
 
