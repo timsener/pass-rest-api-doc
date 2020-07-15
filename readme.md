@@ -14,6 +14,12 @@ Once a valid token has been acquired - the `Authorization` header can be formed 
 
 An AccessToken is valid for a specific period of time. Every time an AccessToken is succesfully used, the expiry date/time of the token is set to the maximum days configured in the API configuration.
 
+## API AppBearer
+
+A different type of authorization is possible using an AppBearer Authorization header. If a specific API key has been configured to allow this kind of authorization - it is possible to use Token based operations using a specific `AppBearer`. The AppBearer contains the API Key and a specific client number. The client number is used to create a specific context in which services are called.
+
+The format of this type of `Authorization` header is as folows "`Authorization: AppBearer {api_key},{client_number}`" - where the {api_key} and {client_number} are separated by a comma.
+
 ## API Services Operations
 
 | Service     | URI                                                                                  |  Method  | Description                                                     |

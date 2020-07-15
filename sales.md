@@ -22,7 +22,7 @@ Returns json data about pashouder.
 
   **Required:**
 
-  `Authorization` (type: bearer)
+  `Authorization` (type: Bearer or AppBearer)
 
 - **URL Params**
 
@@ -163,7 +163,7 @@ Updates pashouder and return json data about pashouder
 
   **Required:**
 
-  `Authorization` (type: bearer)
+  `Authorization` (type: Bearer or AppBearer)
 
 - **URL Params**
 
@@ -317,7 +317,7 @@ Returns json data about pas.
 
   **Required:**
 
-  `Authorization` (type: bearer)
+  `Authorization` (type: Bearer or AppBearer)
 
 - **URL Params**
 
@@ -379,12 +379,12 @@ Toggle pas status (block/unblock)
 
   **Required:**
 
-  `Authorization` (type: bearer)
+  `Authorization` (type: Bearer or AppBearer)
 
 - **URL Params**
 
   **Required:**
-  
+
   `pasnummer`
 
 - **Data Params**

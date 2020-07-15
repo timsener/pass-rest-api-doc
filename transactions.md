@@ -1,7 +1,7 @@
-| URI                                        | Method | Returns                             |
-| ------------------------------------------ | ------ | ----------------------------------- |
+| URI                                                                | Method | Returns                                              |
+| ------------------------------------------------------------------ | ------ | ---------------------------------------------------- |
 | [/transactions/v1/aanbiedingen](#retrieve-aanbieding-transactions) | `GET`  | retrieve transactions for aanbiedingen for pashouder |
-| [/transactions/v1/budget](#retrieve-budget-transactions) | `GET`  | retrieve transactions for budgetten for pashouder |
+| [/transactions/v1/budget](#retrieve-budget-transactions)           | `GET`  | retrieve transactions for budgetten for pashouder    |
 
 ## **Retrieve aanbieding transactions**
 
@@ -19,13 +19,17 @@ Returns json data about aanbieding transactions.
 
   **Required:**
 
-  `Authorization` (type: bearer)
+  `Authorization` (type: Bearer or AppBearer)
 
 - **URL Params**
 
   **Optional:**
 
   `sub_transactions=[boolean]` (include transactions for subpashouders >> default: false)
+
+  `date_from=[date]` filter transactions by transaction date from, ie. '2020-01-01'
+
+  `date_until=[date]` filter transactions by transaction date until, ie. '2020-12-31'
 
 - **Success Response:**
 
@@ -111,6 +115,10 @@ Returns json data about budget transactions.
   **Optional:**
 
   `sub_transactions=[boolean]` (include transactions for subpashouders >> default: false)
+
+  `date_from=[date]` filter transactions by transaction date from, ie. '2020-01-01'
+
+  `date_until=[date]` filter transactions by transaction date until, ie. '2020-12-31'
 
 - **Success Response:**
 
