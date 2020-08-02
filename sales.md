@@ -51,11 +51,24 @@ Returns json data about pashouder.
         "emailadres": "john.doe@gmail.com",
         "geslacht": "Man",
         "geboortedatum": "1974-06-14T00:00:00.0000000",
+        "mailing": true,
         "foto_cdn_url": "https://cdn.intermediad.nl/content/xKLDKyuN6L8OY",
         "adressen": [
             {
                 "id": 3213,
                 "adres_type": "Woonadres",
+                "straat": "Leidsestraat",
+                "huisnummer": "20",
+                "postcode": "1100AB",
+                "plaats": {
+                    "id": 3921,
+                    "naam": "Amsterdam",
+                    "gemeente": "Amsterdam"
+                }
+            },
+            {
+                "id": 3213,
+                "adres_type": "Postadres",
                 "straat": "Leidsestraat",
                 "huisnummer": "20",
                 "postcode": "1100AB",
@@ -171,7 +184,7 @@ Updates pashouder and return json data about pashouder
 
 - **Data Params**
 
-  Minimum of one and any combination of any of the attributes in the JSON body below with the exception of {password} and {password_current} which always need to be combined
+  Minimum of one and any combination of any of the root attributes in the JSON body below with the exception of {password} and {password_current} which always need to be combined
 
   ```javascript
   {
@@ -184,7 +197,19 @@ Updates pashouder and return json data about pashouder
     "achternaam": "Doe",
     "telefoon_nummer": "0201234567",
     "mobiel_nummer": "0612345678",
-    "emailadres": "j.doe@gmail.com"
+    "emailadres": "j.doe@gmail.com",
+    "mailing_strbool": "true",        // string boolean used to avoid unwanted changes in mapping (regular empty boolean results in false)
+    "adressen": [
+      {
+        "adres_type": "Postadres",
+        "straat": "Spuiboulevard",
+        "huisnummer": 300,
+        "huisnummer_letter": "",
+        "huisnummer_toevoeging": "",
+        "postcode": "3311GJ",
+        "plaatsnaam": "Dordrecht"
+      }
+    ]
   }
   ```
 
@@ -196,7 +221,7 @@ Updates pashouder and return json data about pashouder
   - **Code:** 204 <br />
     **Message:** No changes found<br />
 
-    **Description:** returns same data as Retrieve pashouder operation but with updated data <br />
+    **Description:** returns same data as Retrieve pashouder operation but with updated data - no data is returned if no changes were found <br />
 
     **Content:**
 
@@ -342,7 +367,7 @@ Returns json data about pas.
         "pasnummer_volledig": "6064367007843635824",
         "categorie_code": "C",
         "categorie": "Standaardpas",
-        "balance": 0,
+        "balance": 250,
         "balance_update_time": "2019-10-28T19:41:08.000Z",
         "actief": true,
         "passoort": {
@@ -353,6 +378,13 @@ Returns json data about pas.
             {
                 "geldig_vanaf": "2019-09-30T22:00:00.000Z",
                 "geldig_tm": "2020-12-31T22:59:59.000Z"
+            }
+        ],
+        "budgetten": [
+            {
+                "code": "TESTBUDGET",
+                "omschrijving": "Budget tbv testen",
+                "budget_balance": 250
             }
         ]
     }
