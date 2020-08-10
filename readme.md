@@ -39,7 +39,7 @@ The format of this type of `Authorization` header is as folows "`Authorization: 
 | Sales       | [/sales/v1/pashouder](sales.md#retrieve-pashouder)                                   |  `GET`   | retrieve a single pashouder by token                            |
 | Sales       | [/sales/v1/pashouder](sales.md#update-pashouder)                                     |  `POST`  | update pashouder by token                                       |
 | Sales       | [/sales/v1/registerpashouder](sales.md#register-pashouder)                           |  `POST`  | register pashouder to account                                   |
-| Sales       | [/sales/v1/pas](sales.md#retrieve-pas)                                               |  `POST`  | retrieve pas details by pasnummer                               |
+| Sales       | [/sales/v1/pas](sales.md#retrieve-pas)                                               |  `GET`   | retrieve pas details by pasnummer                               |
 | Sales       | [/sales/v1/togglepas](sales.md#toggle-pas)                                           |  `POST`  | toggle pas status (block/unblock)                               |
 |             |                                                                                      |          |                                                                 |
 | Token       | [/token/v1/login](token.md#login)                                                    |  `POST`  | login using Basic authentication and return an AccessToken      |
