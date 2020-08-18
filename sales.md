@@ -384,7 +384,8 @@ Returns json data about pas.
             {
                 "code": "TESTBUDGET",
                 "omschrijving": "Budget tbv testen",
-                "budget_balance": 250
+                "budget_assigned": 300.00,
+                "budget_balance": 250.00
             }
         ]
     }
