@@ -31,6 +31,8 @@ Returns json data about aanbieding transactions.
 
   `date_until=[date]` filter transactions by transaction date until, ie. '2020-12-31'
 
+  `pasnummer=[string]` filter transactions by pas
+
 - **Success Response:**
 
   - **Code:** 200 <br />
@@ -119,6 +121,10 @@ Returns json data about budget transactions.
   `date_from=[date]` filter transactions by transaction date from, ie. '2020-01-01'
 
   `date_until=[date]` filter transactions by transaction date until, ie. '2020-12-31'
+
+  `budgetcode=[string]` filter transactions by budgetcode
+
+  `pasnummer=[string]` filter transactions by pas
 
 - **Success Response:**
 
