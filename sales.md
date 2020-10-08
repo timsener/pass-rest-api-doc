@@ -5,6 +5,7 @@
 | [/sales/v1/registerpashouder](#register-pashouder) | `POST` | register pashouder to account       |
 | [/sales/v1/pas](#retrieve-pas)                     | `GET`  | retrieve pas details by pasnummer   |
 | [/sales/v1/togglepas](#toggle-pas)                 | `POST` | toggle pas status (block/unblock)   |
+| [/sales/v1/activatebudget](#activate-budget)       | `POST` | activate budgets on pas             |
 
 ## **Retrieve pashouder**
 
@@ -51,6 +52,8 @@ Returns json data about pashouder.
         "emailadres": "john.doe@gmail.com",
         "geslacht": "Man",
         "geboortedatum": "1974-06-14T00:00:00.0000000",
+        "gemeente": "Amsterdam",
+        "gemeentecode": "0363",
         "mailing": true,
         "foto_cdn_url": "https://cdn.intermediad.nl/content/xKLDKyuN6L8OY",
         "adressen": [
@@ -125,6 +128,8 @@ Returns json data about pashouder.
                 "geslacht": "Man",
                 "geboortedatum": "1974-06-14T00:00:00.0000000",
                 "foto_cdn_url": "https://cdn.intermediad.nl/content/xKLDKyuN6L8OY",
+                "gemeente": "Amsterdam",
+                "gemeentecode": "0363",
                 "passen": [
                     {
                         "id": 1234567890,
@@ -370,6 +375,7 @@ Returns json data about pas.
         "balance": 250,
         "balance_update_time": "2019-10-28T19:41:08.000Z",
         "actief": true,
+        "budgetten_actief": true,
         "passoort": {
             "id": 5,
             "naam": "Dordtpas"
@@ -454,3 +460,59 @@ Toggle pas status (block/unblock)
 
   - **Code:** 406 <br />
     **Message:** Error occurred while trying to change pas status
+
+## **Activate budget**
+
+Activate budgets on pas
+
+- **URL**
+
+  /sales/v1/activatebudget/{pasnummer}
+
+- **Method:**
+
+  `POST`
+
+- **Headers**
+
+  **Required:**
+
+  `Authorization` (type: Bearer or AppBearer)
+
+- **URL Params**
+
+  **Required:**
+
+  `pasnummer`
+
+- **Data Params**
+
+  None
+
+- **Success Response:**
+
+  - **Code:** 200 <br />
+    **Message:** OK <br />
+
+    **Description:** returns same data as Get pas operation but with updated status <br />
+
+    **Content:**
+
+    ```javascript
+        {
+        "id": 3618,
+        "pasnummer": 43635824,
+        "pasnummer_volledig": "6064367007843635824",
+        "categorie_code": "C",
+        ...
+    ```
+
+    see [/sales/v1/pas](#retrieve-pas) for pas entity details
+
+- **Error Response:**
+
+  - **Code:** 404 <br />
+    **Message:** Pas not found for pasnummer: XXXXXX
+
+  - **Code:** 406 <br />
+    **Message:** Error occurred while trying to activate budgets

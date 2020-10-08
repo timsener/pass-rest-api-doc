@@ -220,7 +220,9 @@ Returns json data about an aanbiederactiviteit.
                 "longitude": 5.114757,
                 "plaats": {
                     "id": 943,
-                    "naam": "Utrecht"
+                    "naam": "Utrecht",
+                    "gemeente": "Amsterdam",
+                    "gemeentecode": "0363"
                 }
             }
         ],

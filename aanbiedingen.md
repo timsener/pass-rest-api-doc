@@ -133,7 +133,8 @@ Returns json data about an aanbieding.
               "plaats": {
                 "id": 3214,
                 "naam": "Utrecht",
-                "gemeente": "Utrecht"
+                "gemeente": "Amsterdam",
+                "gemeentecode": "0363"
               }
             }
           ],
@@ -181,7 +182,8 @@ Returns json data about an aanbieding.
           "plaats": {
             "id": 3214,
             "naam": "Utrecht",
-            "gemeente": "Utrecht"
+            "gemeente": "Amsterdam",
+            "gemeentecode": "0363"
           }
         }
       ],
