@@ -36,6 +36,8 @@ The format of this type of `Authorization` header is as folows "`Authorization: 
 | Aanvragen   | [/aanvragen/v2/pasaanvraag/{uuid}](aanvragen.md#retrieve-pasaanvraag)                |  `GET`   | retrieve a pasaanvraag                                          |
 | Aanvragen   | [/aanvragen/v2/document/{uuid}](aanvragen.md#upload-document)                        |  `POST`  | upload binary content for document                              |
 |             |                                                                                      |          |                                                                 |
+| DataAPI     | [/data/v1/fulfilment](dataapi.md#add-fulfilment-data)                                |  `POST`  | add fulfilment data                                             |
+|             |                                                                                      |          |                                                                 |
 | Sales       | [/sales/v1/pashouder](sales.md#retrieve-pashouder)                                   |  `GET`   | retrieve a single pashouder by token                            |
 | Sales       | [/sales/v1/pashouder](sales.md#update-pashouder)                                     |  `POST`  | update pashouder by token                                       |
 | Sales       | [/sales/v1/registerpashouder](sales.md#register-pashouder)                           |  `POST`  | register pashouder to account                                   |
