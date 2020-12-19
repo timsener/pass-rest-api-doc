@@ -30,6 +30,7 @@ Returns json data about pashouder.
   **Optional:**
 
   `addsubs=[boolean]` (include subpashouder >> default: false)
+  `onlyvalidcards=[boolean]` (only return cards that are currently active)
 
 - **Success Response:**
 
