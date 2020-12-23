@@ -95,6 +95,9 @@ Returns json data about pashouder.
                 "id": 1234567890,
                 "pasnummer": 690301232131,
                 "pasnummer_volledig": "64030690301232131",
+                "category": "Standaardpas",
+                "category_code": "S",
+                "expiry_date": "2019-12-31T00:00:00.0000000",
                 "actief": true,
                 "originele_pas": {
                     "id": 1234567890,
@@ -136,6 +139,9 @@ Returns json data about pashouder.
                         "id": 1234567890,
                         "pasnummer": 690301232131,
                         "pasnummer_volledig": "64030690301232131",
+                        "category": "Standaardpas",
+                        "category_code": "S",
+                        "expiry_date": "2019-12-31T00:00:00.0000000",
                         "actief": true,
                         "originele_pas": {
                             "id": 1234567890,
@@ -371,10 +377,11 @@ Returns json data about pas.
         "id": 3618,
         "pasnummer": 43635824,
         "pasnummer_volledig": "6064367007843635824",
-        "categorie_code": "C",
         "categorie": "Standaardpas",
+        "categorie_code": "C",        
         "balance": 250,
         "balance_update_time": "2019-10-28T19:41:08.000Z",
+        "expiry_date": "2019-12-31T00:00:00.0000000",
         "actief": true,
         "budgetten_actief": true,
         "passoort": {
