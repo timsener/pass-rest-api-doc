@@ -25,7 +25,7 @@ Returns json data about aanbiedingen.
 
   **Optional:**
 
-  `limit=[integer]` <br /> `offset=[integer]` <br /> `aanbieding_nummer=[integer]` <br />
+  `limit=[integer]` <br /> `offset=[integer]` <br /> `aanbieding_nummer=[integer]` <br /> `valid_on_or_after=[date i.e. 2020-12-01]` <br />
 
 - **Success Response:**
 
