@@ -57,6 +57,7 @@ Returns json data about pashouder.
         "gemeente": "Amsterdam",
         "gemeentecode": "0363",
         "mailing": true,
+        "heeft_budget": true,
         "foto_cdn_url": "https://cdn.intermediad.nl/content/xKLDKyuN6L8OY",
         "adressen": [
             {
