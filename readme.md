@@ -44,6 +44,7 @@ The format of this type of `Authorization` header is as folows "`Authorization: 
 | Sales       | [/sales/v1/pas](sales.md#retrieve-pas)                                               |  `GET`   | retrieve pas details by pasnummer                               |
 | Sales       | [/sales/v1/togglepas](sales.md#toggle-pas)                                           |  `POST`  | toggle pas status (block/unblock)                               |
 | Sales       | [/sales/v1/activatebudget](sales.md#activate-budget)                                 |  `POST`  | activate budgets on pas                                         |
+| Sales       | [/sales/v1/checkactivepas](sales.md#check-active-pas)                                |  `POST`  | check for active and valid pa                                   |
 |             |                                                                                      |          |                                                                 |
 | Token       | [/token/v1/login](token.md#login)                                                    |  `POST`  | login using Basic authentication and return an AccessToken      |
 | Token       | [/token/v1/login](token.md#logout)                                                   | `DELETE` | logout using Bearer authentication and expiring the AccessToken |

@@ -6,6 +6,8 @@
 | [/sales/v1/pas](#retrieve-pas)                     | `GET`  | retrieve pas details by pasnummer   |
 | [/sales/v1/togglepas](#toggle-pas)                 | `POST` | toggle pas status (block/unblock)   |
 | [/sales/v1/activatebudget](#activate-budget)       | `POST` | activate budgets on pas             |
+| [/sales/v1/checkactivepas](#check-active-pas)      | `POST` | check for active and valid pas      |
+
 
 ## **Retrieve pashouder**
 
@@ -526,3 +528,72 @@ Activate budgets on pas
 
   - **Code:** 406 <br />
     **Message:** Error occurred while trying to activate budgets
+
+## **Check active pas**
+
+Check for an active and valid pas
+
+- **URL**
+
+  /sales/v1/checkactivepas
+
+- **Method:**
+
+  `POST`
+
+- **Headers**
+
+  **Required:**
+
+  `API-Key`
+
+- **URL Params**
+
+  None
+
+- **Data Params**
+
+  **Required:**
+
+  To check for an active(enabled) and valid(validity at the time of request) a pasnummer or combination of postcode, huisnummer and geboortedatum is required in the body of the POST request. Failing to provide the required parameters results in a http 406 response.
+
+    ```javascript
+      {
+          "pasnummer": 99999991,
+          "postcode": "1100 AA",
+          "huisnummer": 15,
+          "geboortedatum": "2021-12-31"
+      }
+    ```
+
+- **Success Response:**
+
+  - **Code:** 200 <br />
+    **Message:** OK <br />
+
+    **Description:** returns data about the valid and active card - failing to find a card results in a http 404 response<br />
+
+    **Content:**
+
+    ```javascript
+      {
+          "pasnummer": 99999991,
+          "pasnummer_volledig": "6064367007899999991",
+          "categorie": "Mantelzorg",
+          "categorie_code": "M",
+          "expiry_date": "2021-12-31T22:59:59.000Z",
+          "actief": true,
+          "vervangen": false
+      }
+    ```
+
+- **Error Response:**
+
+  - **Code:** 406 <br />
+    **Message:** {pasnummer} of combinatie van {postcode}, {huisnummer}, {geboortedatum} is verplicht
+
+  - **Code:** 404 <br />
+    **Message:** Geen pas gevonden
+
+  - **Code:** 406 <br />
+    **Message:** Geen geldige pas gevonden
