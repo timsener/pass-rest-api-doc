@@ -103,23 +103,19 @@ Returns json data about pashouder.
                 "category_code": "S",
                 "expiry_date": "2019-12-31T00:00:00.0000000",
                 "actief": true,
+                "heeft_budget": true,
+                "vervangen": true,
                 "originele_pas": {
                     "id": 1234567890,
                     "pasnummer": 690301862131,
                     "pasnummer_volledig": "64030690301862131",
-                    "geldigheid": [
-                        {
-                            "geldig_vanaf": "2019-01-01T00:00:00.0000000",
-                            "geldig_tm": "2019-12-31T00:00:00.0000000"
-                        }
-                    ]
-                },
-                "geldigheid": [
-                    {
-                        "geldig_vanaf": "2019-01-01T00:00:00.0000000",
-                        "geldig_tm": "2019-12-31T00:00:00.0000000"
+                    "categorie": "Standaardpas",
+                    "categorie_code": "A",
+                    "passoort": {
+                      "id": 3213,
+                      "naam": "Stadspas 2019"
                     }
-                ]
+                }
             }
         ],
         "sub_pashouders": [
@@ -138,6 +134,7 @@ Returns json data about pashouder.
                 "foto_cdn_url": "https://cdn.intermediad.nl/content/xKLDKyuN6L8OY",
                 "gemeente": "Amsterdam",
                 "gemeentecode": "0363",
+                "heeft_budget": true,
                 "passen": [
                     {
                         "id": 1234567890,
@@ -151,19 +148,13 @@ Returns json data about pashouder.
                             "id": 1234567890,
                             "pasnummer": 690301862131,
                             "pasnummer_volledig": "64030690301862131",
-                            "geldigheid": [
-                                {
-                                    "geldig_vanaf": "2019-01-01T00:00:00.0000000",
-                                    "geldig_tm": "2019-12-31T00:00:00.0000000"
-                                }
-                            ]
-                        },
-                        "geldigheid": [
-                            {
-                                "geldig_vanaf": "2019-01-01T00:00:00.0000000",
-                                "geldig_tm": "2019-12-31T00:00:00.0000000"
+                            "categorie": "Standaardpas",
+                            "categorie_code": "A",
+                            "passoort": {
+                              "id": 3213,
+                              "naam": "Stadspas 2019"
                             }
-                        ]
+                        }
                     }
                 ]
             }
@@ -388,16 +379,23 @@ Returns json data about pas.
         "expiry_date": "2019-12-31T00:00:00.0000000",
         "actief": true,
         "budgetten_actief": true,
+        "heeft_budget": true,
+        "vervangen": false,
         "passoort": {
             "id": 5,
             "naam": "Dordtpas"
         },
-        "geldigheid": [
-            {
-                "geldig_vanaf": "2019-09-30T22:00:00.000Z",
-                "geldig_tm": "2020-12-31T22:59:59.000Z"
-            }
-        ],
+        "originele_pas": {
+            "id": 1234567890,
+            "pasnummer": 690301862131,
+            "pasnummer_volledig": "64030690301862131",
+            "geldigheid": [
+                {
+                    "geldig_vanaf": "2019-01-01T00:00:00.0000000",
+                    "geldig_tm": "2019-12-31T00:00:00.0000000"
+                }
+            ]
+        },
         "budgetten": [
             {
                 "code": "TESTBUDGET",
