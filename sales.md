@@ -399,7 +399,9 @@ Returns json data about pas.
         "budgetten": [
             {
                 "code": "TESTBUDGET",
+                "naam": "Test budget",
                 "omschrijving": "Budget tbv testen",
+                "expiry_date": "2019-01-01T00:00:00.0000000",
                 "budget_assigned": 300.00,
                 "budget_balance": 250.00
             }
