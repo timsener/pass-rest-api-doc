@@ -86,6 +86,7 @@ Returns json data about an aanbieding.
       "pijler": "Cultuur",
       "titel": "Volksbuurtmuseum",
       "beschrijving": "Maak er kennis met twee eeuwen dagelijks leven van gewone mensen in Nederland.",
+      "beschrijving_html": "Maak er kennis met twee eeuwen dagelijks leven van gewone mensen in Nederland.",
       "publicatie_datum": "2019-06-14T00:00:00.0000000",
       "start_datum": "2019-07-01T00:00:00.0000000",
       "eind_datum": "2020-06-30T00:00:00.0000000",
@@ -98,7 +99,9 @@ Returns json data about an aanbieding.
       "reserveren_telnr": "",
       "reserveren_email": "",
       "reserveren_info": "",
+      "reserveren_info_html": "",
       "pashouder_tips": "",
+      "pashouder_tip_html_": "",
       "mag_uitgelicht_worden": true,
       "is_dezelfde_dag_inwisselbaar": true,
       "aanbieders": [
