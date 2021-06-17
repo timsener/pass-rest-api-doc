@@ -33,6 +33,8 @@ Returns json data about aanbieding transactions.
 
   `pasnummer=[string]` filter transactions by pas
 
+  `pashouder_id=[string]` filter transactions by pashouder
+
 - **Success Response:**
 
   - **Code:** 200 <br />
@@ -43,6 +45,8 @@ Returns json data about aanbieding transactions.
     {
         "number_of_items": 20,
         "total_items:" 36,
+        "totale_aantal": 20,
+        "totale_korting": 20.5,
         "transacties": [
             {
                 "id": 4119,
@@ -125,6 +129,9 @@ Returns json data about budget transactions.
   `budgetcode=[string]` filter transactions by budgetcode
 
   `pasnummer=[string]` filter transactions by pas
+
+  `pashouder_id=[string]` filter transactions by pashouder
+
 
 - **Success Response:**
 
