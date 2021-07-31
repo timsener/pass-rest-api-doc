@@ -35,6 +35,8 @@ The format of this type of `Authorization` header is as folows "`Authorization: 
 | Aanvragen   | [/aanvragen/v2/pasaanvraag/{uuid}](aanvragen.md#update-pasaanvraag)                  |  `POST`  | update an existing pasaanvraag                                  |
 | Aanvragen   | [/aanvragen/v2/pasaanvraag/{uuid}](aanvragen.md#retrieve-pasaanvraag)                |  `GET`   | retrieve a pasaanvraag                                          |
 | Aanvragen   | [/aanvragen/v2/document/{uuid}](aanvragen.md#upload-document)                        |  `POST`  | upload binary content for document                              |
+| Aanvragen   | [/aanvragen/v2/boaaanvraag](boaaanvragen.md#initiate-boaaanvraag)                    |  `POST`  | initiate a new boa aanvraag                                     |
+| Aanvragen   | [/aanvragen/v2/boaupdate](boaaanvragen.md#update-boaaanvraag)                        |  `POST`  | webhook updat for boaaanvraag                                   |
 |             |                                                                                      |          |                                                                 |
 | DataAPI     | [/data/v1/fulfilment](dataapi.md#add-fulfilment-data)                                |  `POST`  | add fulfilment data                                             |
 |             |                                                                                      |          |                                                                 |
