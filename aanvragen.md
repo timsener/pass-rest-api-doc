@@ -11,7 +11,7 @@ Initiate a new pasaanvraag by identity and return json data about the pasaanvraa
 
 - **URL**
 
-  /aanvraag/v2/pasaanvraag
+  /aanvragen/v2/pasaanvraag
 
 - **Method:**
 
@@ -79,7 +79,7 @@ Updates a previously initiated pasaanvraag found by the provided uuid. Objects p
 
 - **URL**
 
-  /aanvraag/v2/pasaanvraag/{uuid}
+  /aanvragen/v2/pasaanvraag/{uuid}
 
 - **Method:**
 
@@ -337,7 +337,7 @@ Retrieve an existing pasaanvraag by uuid and return json data about this pasaanv
 
 - **URL**
 
-  /aanvraag/v2/pasaanvraag/{uuid}
+  /aanvragen/v2/pasaanvraag/{uuid}
 
 - **Method:**
 
@@ -451,7 +451,7 @@ Upload binary content for a previously anounced document {feiten}{documenten} fo
 
 - **URL**
 
-  /aanvraag/v2/document/{document_uuid}
+  /aanvragen/v2/document/{document_uuid}
 
 - **Method:**
 

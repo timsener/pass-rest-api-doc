@@ -9,7 +9,7 @@ Initiate a new boaaanvraag.
 
 - **URL**
 
-  /aanvraag/v2/boaaanvraag
+  /aanvragen/v2/boaaanvraag
 
 - **Method:**
 
@@ -75,7 +75,7 @@ Update status of an existing BOAAanvraag.
 
 - **URL**
 
-  /aanvraag/v2/boaupdate
+  /aanvragen/v2/boaupdate
 
 - **Method:**
 
