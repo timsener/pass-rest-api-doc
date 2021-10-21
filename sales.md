@@ -263,7 +263,7 @@ Register account on existing pashouder
 
 - **URL**
 
-  /sales/v1/registerashouder
+  /sales/v1/registerpashouder
 
 - **Method:**
 
@@ -281,7 +281,13 @@ Register account on existing pashouder
 
 - **Data Params**
 
-  Elements {pashouder_id} or {pasnummer} combined with {geboortedatum} are required to identify an existing pashouder for account registration. {login_name} and {passowrd} are required to execute the registration.
+  One of the following combinations of parameters is required in addition to a {login_name} and {password}:
+  - `pashouder_id` + `pasnnummer`
+  - `pashouder_id` + `geboortedatum`
+  - `pasnummer` + `gebooredatum`
+  <p></p>
+
+  `pasnummer` should not be replaced by a duplicate, be active and be valid
 
   ```javascript
     {
@@ -316,10 +322,10 @@ Register account on existing pashouder
 - **Error Response:**
 
   - **Code:** 406 <br />
-    **Message:** Either {pashouder_id} or a combination of {geboortedatum} and {pasnummer} attributes are mandatory and are missing or empty
+    **Message:** Invalid combination of parameters provided
 
-  - **Code:** 406 <br />
-    **Message:** Pashouder not found for {pashouder_id}: XXXXXX and {pasnummer}: XXXXXX
+  - **Code:** 404 <br />
+    **Message:** Pashouder for account registration could not be determined for given parameters
 
   - **Code:** 406 <br />
     **Message:** {login_name} is empty or missing
