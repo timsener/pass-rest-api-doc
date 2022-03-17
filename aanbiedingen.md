@@ -104,6 +104,10 @@ Returns json data about an aanbieding.
       "pashouder_tip_html_": "",
       "mag_uitgelicht_worden": true,
       "is_dezelfde_dag_inwisselbaar": true,
+      "offline_verzilvering": true,
+      "online_verzilvering": true,
+      "online_verzilveringswijze": "Kortingscode", // { Kortingscode, PasnummerEnBeveiligingscode }
+      "online_verzilveringsurl": "https://intermediad.nl/webshop/x",
       "aanbieders": [
         {
           "id": 1042,
