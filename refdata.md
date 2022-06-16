@@ -95,7 +95,7 @@ Returns json data about payment methods
                     "image": "https://www.mollie.com/external/icons/ideal-issuers/TRIONL2U.svg"
                 },
                 {
-                    "id": "ideal_FVLBNL22",
+                    "id": "ideal_ABC22",
                     "name": "iDEAL",
                     "image": "https://www.mollie.com/external/icons/ideal-issuers/FVLBNL22.svg"
                 }
