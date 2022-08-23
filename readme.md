@@ -25,7 +25,7 @@ The format of this type of `Authorization` header is as folows "`Authorization: 
 | Service     | URI                                                                                  |  Method  | Description                                                     |
 | ----------- | ------------------------------------------------------------------------------------ | :------: | --------------------------------------------------------------- |
 | Aanbod      | [/aanbod/v1/aanbiedingen](aanbiedingen.md#retrieve-aanbiedingen)                     |  `GET`   | retrieve a list of aanbiedingen                                 |
-| Aanbod      | [/aanbod/v1/aanbiedingen/:id](aanbiedingen.md#retrieve-aanbieding)                   |  `GET`   | retrieve a single aanbieding by id                              |
+| Aanbod      | [/aanbod/v1/aanbiedingen/:aanbiedingnummer](aanbiedingen.md#retrieve-aanbieding)                   |  `GET`   | retrieve a single aanbieding by id                              |
 | Aanbod      | [/aanbod/v1/activiteiten](activiteiten.md#retrieve-activiteiten)                     |  `GET`   | retrieve a list of activiteiten                                 |
 | Aanbod      | [/aanbod/v1/activiteiten/:id](activiteiten.md#retrieve-activiteit)                   |  `GET`   | retrieve a single activiteit by id                              |
 | Aanbod      | [/aanbod/v1/aanbiederactiviteiten](activiteiten.md#retrieve-aanbiederactiviteiten)   |  `GET`   | retrieve a list of aanbiederactiviteiten                        |
