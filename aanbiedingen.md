@@ -44,7 +44,7 @@ Returns json data about aanbiedingen.
                 ...
     ```
 
-    see [/aanbod/v1/aanbiedingen/:id](#retrieve-aanbieding) for aanbieding entity details
+    see [/aanbod/v1/aanbiedingen/:aanbiedingnummer](#retrieve-aanbieding) for aanbieding entity details
 
 ## **Retrieve aanbieding**
 
@@ -52,7 +52,7 @@ Returns json data about an aanbieding.
 
 - **URL**
 
-  /aanbod/v1/aanbiedingen/:id
+  /aanbod/v1/aanbiedingen/:aanbiedingnummer
 
 - **Method:**
 
