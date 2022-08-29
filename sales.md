@@ -568,7 +568,8 @@ Check for an active and valid pas
           "pasnummer": 99999991,
           "postcode": "1100 AA",
           "huisnummer": 15,
-          "geboortedatum": "2021-12-31"
+          "geboortedatum": "2021-12-31",
+		  "checkonlyactive": true
       }
     ```
 
@@ -577,7 +578,7 @@ Check for an active and valid pas
   - **Code:** 200 <br />
     **Message:** OK <br />
 
-    **Description:** returns data about the valid and active card - failing to find a card results in a http 404 response<br />
+    **Description:** if checkonlyactive is true returns data about the most recent valid and active card - if checkonlyactive is false and a pasnuumer is specified, returns data (including prolong data) about the specified card - failing to find a card results in a http 404 response<br />
 
     **Content:**
 
@@ -589,7 +590,14 @@ Check for an active and valid pas
           "categorie_code": "M",
           "expiry_date": "2021-12-31T22:59:59.000Z",
           "actief": true,
-          "vervangen": false
+          "vervangen": false,
+		  "verlenging": {
+			"verlengbaar": true,
+			"verlengpasjaar": 2022,
+			"betaalkenmerk": "1234567890123456",
+			"betaalstatus": "Verzonden",
+			"totaalbedrag": 60.00
+			}
       }
     ```
 
