@@ -212,7 +212,9 @@ Returns json data about an aanbiederactiviteit.
             "straat": "Waterstraat",
             "huisnummer": "27a",
             "postcode": "3511BW",
-            "plaats": "Utrecht"
+            "plaats": "Utrecht",
+            "partnersoort": "Musea",
+            "partnersoort_titel": "Je krijgt 50% korting op toegangskaarten en kunt de rest met je tegoed betalen."
         },
         "locaties": [
             {
