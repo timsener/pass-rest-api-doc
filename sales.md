@@ -578,7 +578,7 @@ Check for an active and valid pas
   - **Code:** 200 <br />
     **Message:** OK <br />
 
-    **Description:** if checkonlyactive is true returns data about the most recent valid and active card - if checkonlyactive is false and a pasnuumer is specified, returns data (including prolong data) about the specified card - failing to find a card results in a http 404 response<br />
+    **Description:** if checkonlyactive is true returns data about the most recent valid and active card - if checkonlyactive is false and a pasnummer is specified, returns data (including prolong data) about the specified card - failing to find a card results in a http 404 response<br />
 
     **Content:**
 
