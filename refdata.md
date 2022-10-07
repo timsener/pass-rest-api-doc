@@ -1,6 +1,7 @@
 | URI                                                                | Method | Returns                                              |
 | ------------------------------------------------------------------ | ------ | ---------------------------------------------------- |
 | [/refdata/v1/paymentmethods](#retrieve-payment-methods)            | `GET`  | retrieve payment methods and related issuers         |
+| [/refdata/v1/passwordrules](#retrieve-password-rules)               | `GET` | retrieve the currently valid password rules          |
 
 ## **Retrieve payment methods**
 
@@ -104,3 +105,55 @@ Returns json data about payment methods
     ]
 }
 ```
+
+## **Retrieve password rules**
+
+Returns json data about the currently valid password rules
+
+- **URL**
+
+  /refdata/v1/passwordrules
+
+- **Method:**
+
+  `GET`
+
+- **Headers**
+
+  **Required:**
+
+  `API-Key` 
+
+- **URL Params**
+
+  None
+
+- **Success Response:**
+
+  - **Code:** 200 <br />
+    **Message:** OK <br />
+    **Content:** <br />
+
+    ```javascript
+{
+        "minimum_chars": 8,
+        "require_upper_case": true,
+        "require_lower_case": true,
+        "require_numeric": true,
+        "require_special": true,
+        "disallow_username": true
+}
+```
+
+- **Error Response:**
+
+  - **Code:** 406 <br />
+    **Message:** No card organization found
+	
+  - **Code:** 406 <br />
+    **Message:** No API config found
+	
+  - **Code:** 406 <br />
+    **Message:** No password rules found
+	
+	
