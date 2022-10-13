@@ -1,12 +1,13 @@
-| URI                                                | Method | Returns                             |
-| -------------------------------------------------- | ------ | ----------------------------------- |
-| [/sales/v1/pashouder](#retrieve-pashouder)         | `GET`  | retrieve pashouder details by token |
-| [/sales/v1/pashouder](#update-pashouder)           | `POST` | update pashouder by token           |
-| [/sales/v1/registerpashouder](#register-pashouder) | `POST` | register pashouder to account       |
-| [/sales/v1/pas](#retrieve-pas)                     | `GET`  | retrieve pas details by pasnummer   |
-| [/sales/v1/togglepas](#toggle-pas)                 | `POST` | toggle pas status (block/unblock)   |
-| [/sales/v1/activatebudget](#activate-budget)       | `POST` | activate budgets on pas             |
-| [/sales/v1/checkactivepas](#check-active-pas)      | `POST` | check for active and valid pas      |
+| URI                                                | Method | Returns                                    |
+| -------------------------------------------------- | ------ | -------------------------------------------|
+| [/sales/v1/pashouder](#retrieve-pashouder)         | `GET`  | retrieve pashouder details by token        |
+| [/sales/v1/pashouder](#update-pashouder)           | `POST` | update pashouder by token                  |
+| [/sales/v1/registerpashouder](#register-pashouder) | `POST` | register pashouder to account              |
+| [/sales/v1/pas](#retrieve-pas)                     | `GET`  | retrieve pas details by pasnummer          |
+| [/sales/v1/togglepas](#toggle-pas)                 | `POST` | toggle pas status (block/unblock)          |
+| [/sales/v1/activatebudget](#activate-budget)       | `POST` | activate budgets on pas                    |
+| [/sales/v1/checkactivepas](#check-active-pas)      | `POST` | check for active and valid pas             |
+| [/sales/v1/logincheck](#login-check)               | `GET`  | check if a cardholders loginname is unique |
 
 
 ## **Retrieve pashouder**
@@ -603,3 +604,52 @@ Check for an active and valid pas
 
   - **Code:** 406 <br />
     **Message:** Geen geldige pas gevonden
+    
+## **Login check**
+
+Check if a cardholders loginname is unique
+
+- **URL**
+
+  /sales/v1/logincheck
+
+- **Method:**
+
+  `GET`
+
+- **Headers**
+
+  **Required:**
+
+  `API-Key`
+
+- **URL Params**
+
+  **Required:**
+
+  `loginname`
+
+- **Data Params**
+
+- **Success Response:**
+
+  - **Code:** 200 <br />
+    **Message:** OK <br />
+
+    **Description:** checkes whether the login name provided by a cardholder is not already in use by another cardholder<br />
+
+    **Content:**
+
+    ```javascript
+	{
+        "login_name_exists": true
+	}
+    ```
+
+- **Error Response:**
+
+  - **Code:** 406 <br />
+    **Message:** {login_name} is not a valid emailaddress
+
+  - **Code:** 406 <br />
+    **Message:** {login_name} is empty or missing
